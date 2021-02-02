@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using System;
 
@@ -21,6 +22,9 @@ namespace Exercise1_CSharpAutomation
         public void SendText(IWebElement element, string value) {
             element.SendKeys(value);
         }
+        #region WebElements
+        By FacebookText = By.XPath("//h2[contains(text(),'Connect with friends and the world around you on F')]");
+        #endregion
         static void Main(string[] args) {
             IWebDriver Browser;
             IWebElement element;
@@ -28,8 +32,10 @@ namespace Exercise1_CSharpAutomation
             Browser = program.SetUpDriver();
             //1st Test Case
             //Go to facebook.com.
+            Browser.Url = "https://www.facebook.com";
             //Verify following text is displayed:
             //Connect with friends and the world around you on Facebook.
+            Assert.IsTrue(program.FacebookText != null);
             //Click on Create a new account
             //Fill Firstname, Lastname, Mobile Number and New Password
 
