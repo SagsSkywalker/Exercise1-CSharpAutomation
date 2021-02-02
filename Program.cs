@@ -26,8 +26,31 @@ namespace Exercise1_CSharpAutomation
             IWebElement element;
             Program program = new Program();
             Browser = program.SetUpDriver();
-            Browser.Url = "https://www.google.com";
-            //Console.WriteLine("Hello World!");
+            //1st Test Case
+            //Go to facebook.com.
+            //Verify following text is displayed:
+            //Connect with friends and the world around you on Facebook.
+            //Click on Create a new account
+            //Fill Firstname, Lastname, Mobile Number and New Password
+
+            //2nd Test Case
+            //Click on Terms of Services
+            //Validate following title exists
+            //Terms of Service
+            //Validate that following elements exist: Menu from 1 to 5
+
+            //Do the following
+            //In the first test case:
+            //Declare an element that does not exist.
+            //Use exception handler to catch the exception and display a customized message for elements that do not exist.
+
+            //In the second test case:
+            //Create a list and print the text of the following elements
+            //Facebook Ads Controls
+            //Privacy Basics
+            //Cookies Policy
+            //Data Policy
+            //More Resources > View a Printable version of the ToS
         }
     }
 }
