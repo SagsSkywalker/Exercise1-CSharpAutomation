@@ -15,14 +15,14 @@ namespace Exercise1_CSharpAutomation
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(15);
             return driver;
         }
-
+        #region Interactive Methods
         public void Click(IWebElement element) {
             element.Click();
         }
-
         public void SendText(IWebElement element, string value) {
             element.SendKeys(value);
         }
+        #endregion
         #region WebElements
         By FacebookText = By.XPath("//h2[contains(text(),'Connect with friends and the world around you on F')]");
         By CreateAccountFB = By.XPath("//a[@id='u_0_2']");
@@ -59,6 +59,10 @@ namespace Exercise1_CSharpAutomation
             program.SendText(Browser.FindElement(program.Number), "4771234567");
             program.SendText(Browser.FindElement(program.Password), "Password01!");
 
+            //Do the following
+            //In the first test case:
+            //Declare an element that does not exist.
+            //Use exception handler to catch the exception and display a customized message for elements that do not exist.
             try {
                 Assert.IsTrue(Browser.FindElement(program.PasswordFake) != null);
             }
@@ -79,12 +83,6 @@ namespace Exercise1_CSharpAutomation
             Assert.IsTrue(program.Menu3 != null);
             Assert.IsTrue(program.Menu4 != null);
             Assert.IsTrue(program.Menu5 != null);
-
-            //Do the following
-            //In the first test case:
-            //Declare an element that does not exist.
-            //Use exception handler to catch the exception and display a customized message for elements that do not exist.
-
 
             //In the second test case:
             //Create a list and print the text of the following elements
